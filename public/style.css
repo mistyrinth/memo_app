@@ -1,0 +1,28 @@
+body{
+  background-color: #FFF;
+}
+
+header, footer{
+  background-color: #DCDCDC;
+}
+
+header{
+  height:86px;
+  border-bottom: solid 16px #61A77A;
+}
+
+main{
+  height: 350px;
+  position: relative;
+}
+
+footer{
+  height: 40px;
+  border-top: solid 12px #61A77A;
+}
+
+.btn_container{
+  margin-top: 30px;
+  position: absolute;
+  bottom: 12px;
+}
