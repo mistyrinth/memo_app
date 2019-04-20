@@ -3,8 +3,6 @@
 require "sinatra"
 require "sinatra/reloader"
 
-enable :method_override
-
 def open_memo
   @memo_data = {
     title: "",
@@ -64,16 +62,10 @@ end
 post "/" do
   filename = Time.now.strftime("%Y%m%d%H%M%S%3N")
   update_memo(filename)
-  erb :show
-  redirect to("/#{filename}/show")
+  redirect to("/#{filename}")
 end
 
 get "/:id" do
-  @id = params[:id]
-  redirect to("/#{@id}/show")
-end
-
-get "/:id/show" do
   @id = params[:id]
   open_memo
   erb :show
@@ -83,7 +75,7 @@ patch "/:id" do
   @id = params[:id]
   update_memo(@id)
   erb :show
-  redirect to("/#{@id}/show")
+  redirect to("/#{@id}")
 end
 
 get "/:id/edit" do
