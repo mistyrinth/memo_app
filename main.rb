@@ -16,7 +16,6 @@ def open_memo
         @memo_data[:title] = line
       else
         # body = after first line
-        pp line
         @memo_data[:body] += line
       end
       i += 1
